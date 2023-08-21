@@ -61,6 +61,8 @@ const Form = () => {
         </p>
       </div>
       <form
+        action="https://app.convertkit.com/forms/5515020/subscriptions"
+        method="post"
         onSubmit={handleSubmit}
         autoComplete="off"
         className="wrapper__form"
