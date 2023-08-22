@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.scss";
 import Logo from "../../assets/svg/logo.svg";
-// import Form from "../Form/Form";
+import Form from "../Form/Form";
 import CountDown from "../CountDown/CountDown";
 
 const Hero = () => {
@@ -26,9 +26,9 @@ const Hero = () => {
           <CountDown />
         </div>
 
-        {/* <div className="hero__container--form flex">
+        <div className="hero__container--form flex">
           <Form />
-        </div> */}
+        </div>
       </article>
     </section>
   );
