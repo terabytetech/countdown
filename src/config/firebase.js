@@ -4,13 +4,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCRILB09QprMzGHDS1VbPFW545pjxYShPA",
-  authDomain: "testingapp-7068e.firebaseapp.com",
-  projectId: "testingapp-7068e",
-  storageBucket: "testingapp-7068e.appspot.com",
-  messagingSenderId: "277665273750",
-  appId: "1:277665273750:web:1948896c3b634df7f5efb7",
-  measurementId: "G-PCK4VKYZ2H",
+  apiKey: "AIzaSyB4BNGfjKTONFahFhahKcER2hKZM_sOpaQ",
+  authDomain: "terabyte-africa.firebaseapp.com",
+  projectId: "terabyte-africa",
+  storageBucket: "terabyte-africa.appspot.com",
+  messagingSenderId: "803415817818",
+  appId: "1:803415817818:web:ab847b65c82d54fde56263",
+  measurementId: "G-S1S9Y5RKK2",
 };
 
 // Initialize Firebase

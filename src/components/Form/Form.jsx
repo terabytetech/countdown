@@ -4,7 +4,7 @@ import { ReactComponent as Mail } from "../../assets/svg/email.svg";
 import { ReactComponent as User } from "../../assets/svg/people.svg";
 import { db } from "../../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { FaTwitter, FaInstagram, FaFacebook, FaTimes } from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaYoutube, FaTimes } from "react-icons/fa";
 
 const Form = () => {
   const addUserFormData = async (values) => {
@@ -91,13 +91,13 @@ const Form = () => {
           <div className="wrapper__thankyou--social">
             <p>Follow us on social media</p>
             <div className="social__icons flex">
-              <a href="https://www.facebook.com/terabytecountdown">
-                <FaFacebook />
+              <a href="https://www.youtube.com/@jointerabyte">
+                <FaYoutube />
               </a>
-              <a href="https://www.instagram.com/terabytecountdown/">
+              <a href="https://www.instagram.com/jointerabyte">
                 <FaInstagram />
               </a>
-              <a href="https://twitter.com/terabytecount">
+              <a href="https://www.twitter.com/jointerabyte">
                 <FaTwitter />
               </a>
             </div>
