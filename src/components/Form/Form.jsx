@@ -4,7 +4,13 @@ import { ReactComponent as Mail } from "../../assets/svg/email.svg";
 import { ReactComponent as User } from "../../assets/svg/people.svg";
 import { db } from "../../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { FaTwitter, FaInstagram, FaYoutube, FaTimes } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaInstagram,
+  FaYoutube,
+  FaTimes,
+  FaTelegram,
+} from "react-icons/fa";
 
 const Form = () => {
   const addUserFormData = async (values) => {
@@ -100,13 +106,14 @@ const Form = () => {
               <a href="https://www.twitter.com/jointerabyte">
                 <FaTwitter />
               </a>
+              <a href="https://t.me/jointerabyte">
+                <FaTelegram />
+              </a>
             </div>
           </div>
         </div>
       ) : (
         <form
-          action="https://app.convertkit.com/forms/5515020/subscriptions"
-          method="post"
           onSubmit={handleSubmit}
           autoComplete="off"
           className="wrapper__form"
