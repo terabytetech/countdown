@@ -4,12 +4,30 @@
 /*===== VARIABLES CSS =====*/
 :root {
   /*========== Colors ==========*/
-  --clr-white-1: #ffffff;
   --clr-black-1: #cccccc;
   --clr-black-2: #aaaaaa;
+  --clr-black-3: #808080;
+  --clr-black-4: #555555;
+  --clr-black-5: #2a2a2a;
+  --clr-black-6: #000000;
+
+  --clr-green-1: #679c79;
+  --clr-green-2: #81c398;
+  --clr-green-3: #9beab6;
+  --clr-green-4: #acedc2;
   --clr-green-5: #bcf1ce;
-  --clr-darkblue-3: #0a4c68;
+
+  --clr-blue-1: #025556;
+  --clr-blue-2: #026b6b;
+  --clr-blue-3: #038081;
+  --clr-blue-4: #2d9596;
+  --clr-blue-5: #57aaab;
+
   --clr-darkblue-1: #073345;
+  --clr-darkblue-2: #083f57;
+  --clr-darkblue-3: #0a4c68;
+  --clr-darkblue-4: #336a81;
+  --clr-darkblue-5: #5c889a;
 
   /*========== Font-size/family ==========*/
   --body-font: "DM Sans", sans-serif;
@@ -40,7 +58,7 @@
   --z-modal: 200;
 
   /*========== constant css ==========*/
-  --transition: all 0.3s ease-in-out;
+  --transition: all 0.6s ease-in-out;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -66,14 +84,12 @@
   margin: 0;
   padding: 0;
 }
-html {
-  scroll-behavior: smooth;
-}
+
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--clr-black-6);
-  background-color: rgba(5, 31, 43, 0.9);
+  background-color: #f9f9f9;
 }
 
 h1,
@@ -99,17 +115,24 @@ img {
   object-fit: cover;
 }
 
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  padding: 4.5rem 0 1rem;
+}
+
+.d-section {
+  margin-top: 4rem;
+}
 /*========== LAYOUT ==========*/
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   width: calc(100% - 2rem);
   margin-inline: auto;
 }
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: calc(100% - 2rem);
-  }
+.d-container {
+  max-width: 1300px;
+  width: calc(100% - 2rem);
+  margin-inline: auto;
 }
 
 .grid {
@@ -127,11 +150,70 @@ img {
 ::-webkit-scrollbar {
   width: 0rem;
   border-radius: 0.5rem;
-  background-color: var(--clr-primary-1);
+  background-color: var(--clr-black-1);
   transition: var(--transition);
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--clr-primary-1);
+  background-color: var(--clr-darkblue-1);
   border-radius: 0.5rem;
+}
+
+/*========== SCROLL TOP  ==========*/
+/* Scroll top */
+.scrolltop {
+  position: fixed;
+  right: 2rem;
+  margin-bottom: 1.5rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--clr-primary-0);
+  background: hsl(0deg 0% 100%);
+  box-shadow: var(--clr-primary-0) 3px 3px;
+  color: var(--clr-primary-0);
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.scrolltop:hover {
+  color: rgb(255, 255, 255);
+  background: rgb(1, 12, 47);
+}
+
+/* Show scroll top */
+.show-scroll {
+  visibility: visible;
+  bottom: 1rem;
+}
+
+/* =============== LOADING ===============*/
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.spinner {
+  height: 2rem;
+  width: 2rem;
+  fill: var(--clr-primary-10);
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

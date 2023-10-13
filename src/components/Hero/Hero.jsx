@@ -1,33 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Hero.scss";
-import Logo from "../../assets/svg/logo.svg";
-import Form from "../Form/Form";
-import CountDown from "../CountDown/CountDown";
+import { Link } from "react-router-dom";
+import { carouselData } from "../../data/data";
 
 const Hero = () => {
+
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextSlide = (currentSlide + 1) % carouselData.length;
+      setCurrentSlide(nextSlide);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSlide, carouselData.length]);
+
   return (
     <section className="hero">
-      <article className="hero__container">
-        <div className="hero__container--contents container flex">
-          <div className="hero__container--contents__logo">
-            <img src={Logo} alt="logo" />
-          </div>
-
-          <div className="hero__container--contents__text">
-            <h1>We know you can’t wait!</h1>
-            <p>
-              we can’t too. <span>😊</span>
-            </p>
-          </div>
+      <article className="hero__container container">
+        <div className="hero__container-content">
+          <h1 className="hero__title">
+            <span>{carouselData[currentSlide].title}</span>{" "}
+            {carouselData[currentSlide].titlespan}
+          </h1>
+          <p className="hero__text">{carouselData[currentSlide].text}</p>
+          <Link to="/" className="hero__btn-container">
+            <button className="hero__btn">Join Terabyte Now!</button>
+          </Link>
         </div>
 
-        <div className="hero__container--countdown flex">
-          <p className="countdown-text">So, let’s countdown together</p>
-          <CountDown />
-        </div>
-
-        <div className="hero__container--form flex">
-          <Form />
+        <div className="hero__container-image">
+          <img src={carouselData[currentSlide].image} alt="hero" />
         </div>
       </article>
     </section>
